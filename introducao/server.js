@@ -1,22 +1,9 @@
 const express = require("express");
 const app = express();
+const routes = require("./routes");
 
-app.get("/", (req, res) => {
-  res.send("Hello world!!");
-});
-
-app.get("/form", (req, res) => {
-  res.send(`
-  <form action="/form" method="POST">
-    Nome: <input type="text" name="nome">
-    <button>Enviar</button>
-    </form>
-  `);
-});
-
-app.post("/form", (req, res) => {
-  res.send("Recebi o formulário!");
-});
+app.use(express.urlencoded({ extended: true }));
+app.use(routes);
 
 app.listen(3000, () => {
   console.log("Servidor executando na porta 3000");
