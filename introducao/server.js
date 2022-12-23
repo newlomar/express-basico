@@ -18,10 +18,6 @@ app.post("/form", (req, res) => {
   res.send("Recebi o formulário!");
 });
 
-app.get("/contato", (req, res) => {
-  res.send("Obrigado por entrar em contato com a gente.");
-});
-
 app.listen(3000, () => {
   console.log("Servidor executando na porta 3000");
   console.log("Acessar http://localhost:3000");
